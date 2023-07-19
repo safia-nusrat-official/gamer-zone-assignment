@@ -50,14 +50,14 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-nav .title{
+nav .title, footer .title{
     display: flex;
     align-items: center;
 }
-nav .title h3::first-letter{
+nav .title h3::first-letter, footer .title h3::first-letter{
     color: var(--primary-color);
 }
-nav .title img{
+nav .title img, footer .title img{
     scale: 0.7;
     height: 100%;
 }
@@ -190,6 +190,42 @@ section.card .images .img-small{
     left: 0;
     transform: translate(-95px, 35px);
 }
+
+/*footer section*/
+footer{
+    width: 100%;
+    background-color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+}
+footer .title .sub-heading{
+    color: #fff;
+}
+footer ul{
+    display: flex;
+    gap: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+footer ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+footer ul.social-icons li img{
+    width: 1.8rem;
+}
+footer ul.sub-links, footer p{
+    color: var(--text-coor);
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
 /*responsivestyles for mobile devices*/
 
 @media screen and (max-width:576px){
@@ -259,5 +295,23 @@ section.card .images .img-small{
     .card .images{
         align-self: flex-end;
         margin-right: 3rem;
+    }
+    /*footer section*/
+    footer{
+        align-items: center;
+    }
+    footer ul{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    footer ul.sub-links{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    ul.sub-links:nth-child(3){
+        text-align: right;
+    }
+    footer p{
+        text-align: center;
+        margin-top: 2rem;
     }
 }
