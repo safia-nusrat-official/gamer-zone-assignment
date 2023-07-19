@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    list-style: none;
+}
+:root{
+    --primary-color: #FF42A5;
+    --dark-color: #0B0223;
+    --text-coor: #534C64;
+
+}
+.sub-heading{
+    color: var(--dark-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+.main-heading{
+    background: -webkit-linear-gradient(-90deg, #F948B2, #8758F1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 5rem;
+}
+.btn-primary{
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 1rem 1.8rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.txt-general{
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+/* navigation bar styles*/
+nav {
+    width: 100%;
+    padding: 0.2rem 7.5rem;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .title{
+    display: flex;
+    align-items: center;
+}
+nav .title h3::first-letter{
+    color: var(--primary-color);
+}
+nav .title img{
+    scale: 0.7;
+    height: 100%;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    scale: 0.7;
+    transform-origin: right;
+}
+nav ul li{
+    margin-left: 1.3em;
+}
+nav ul li:last-child{
+    border-radius: 0.5rem;
+    padding: 1em;
+    background: rgba(11, 2, 35, 0.05);
+}
+nav li a, nav li span{
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--dark-color);
+    white-space: nowrap;
+}
+nav li.social-links{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+nav li.social-links a img{
+    margin-left: 0.8rem;
+    font-size: 1.6em;
+}
+
+/* header section*/
+main{
+    padding: 0 7.5rem;
+    background: linear-gradient(#eeeeee7a, #fff) ;
+    width: 100%;
+}
+main .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .header-content{
+    width: 50%;
+    margin-right: 5rem;
+    scale: 0.7;
+    transform-origin: left;
+}
+.header-content .header-title h3{
+    font-weight: 600;
+    word-spacing: 12px;
+    font-size: 2.3rem;
+    white-space: nowrap;
+}
+.header-content .header-title{
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+.header-content .buttons{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+    white-space: nowrap;
+}
+.header-content .buttons #special-button{
+    background-color: #4EC5F7;
+}
+.header-content ul li{
+    color: var(--text-coor);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.header-content ul li img{
+    font-size: 1.3rem;
+    margin-right: 1em;
+}
+.header .header-image img{
+    width: 100%;
+    transform-origin: top right;
+}
+
+@media screen and (max-width:576px){
+    nav, nav ul{
+        flex-direction: column;
+    }
+    nav{
+        background-color: #fff;
+        margin: auto;
+        padding: 3rem;
+        justify-content: center;
+    }
+    nav ul{
+        margin: 2rem 0;
+        scale: 1;
+        gap: 2rem;
+    }
+    main{
+        padding: 3rem;
+        padding-top: 0;
+        background: #fff;
+    }
+    main .header{
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        background-image: url(images/group-14.png);
+    }
+    main .header .header-image{
+        order: 1;
+        scale: 1;
+        background: #fff;
+        padding-bottom: 9px;
+    }
+    .header .header-content{
+        margin: auto;
+        padding: 0;
+        width: 100%;
+        order: 2;
+        transform-origin: center;
+    }
+    .header-content .header-title{
+        width: 100%;
+        padding: 0;
+        font-size: 12em;
+    }
+}
