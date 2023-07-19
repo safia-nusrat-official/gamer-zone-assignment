@@ -144,6 +144,53 @@ main .header{
     width: 100%;
     transform-origin: top right;
 }
+/*card section*/
+main section.card{
+    display: flex;
+    align-items: center;
+    text-align: right;
+    justify-content: flex-end;
+    margin-top: 5.4rem;
+    margin-bottom: 5.4rem;
+    position: relative;
+}
+.card .card-content{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding-right: 8.6rem;
+    width: 100%;
+    height: 100%;
+}
+.card .card-content .sub-heading .special-heading{
+    color: var(--primary-color);
+}
+.card-content .sub-heading{
+    white-space: nowrap;
+}
+.card .card-content p{
+    color: var(--text-coor);
+    font-size: 0.8rem;
+    width: 225px;
+}
+section.card .images{
+    position: relative;
+}
+section.card .images img{
+    width: 100%;
+}
+section.card .images .img-large{
+    width: 19rem;
+    height: 19rem;
+}
+section.card .images .img-small{
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    left: 0;
+    transform: translate(-95px, 35px);
+}
+/*responsivestyles for mobile devices*/
 
 @media screen and (max-width:576px){
     nav, nav ul{
@@ -190,5 +237,27 @@ main .header{
         width: 100%;
         padding: 0;
         font-size: 12em;
+    }
+
+    /*card-section responsive*/
+    main .card{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .card .card-content{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .card .card-content p{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 400px;
+    }
+    .card .images{
+        align-self: flex-end;
+        margin-right: 3rem;
     }
 }
