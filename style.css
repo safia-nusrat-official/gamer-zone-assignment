@@ -33,6 +33,13 @@
     font-weight: 600;
     font-size: 1.2rem;
     text-transform: uppercase;
+    position: relative;
+    transition: border 0.2s, background-color 0.2s, color 0.2s;
+}
+.btn-primary:hover{
+    border: 2.5px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: #fff;
 }
 .txt-general{
     color: var(--text-color);
@@ -46,6 +53,7 @@
 }
 .gradient-h3{
     font-weight: 700;
+    font-size: 2rem;
     background: -webkit-linear-gradient(-90deg, #F948B2, #8758F1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -140,6 +148,11 @@ main .header{
 .header-content .buttons #special-button{
     background-color: #4EC5F7;
 }
+#special-button:hover{
+    border: 2.5px solid #4EC5F7;
+    color: #4EC5F7;
+    background-color: #fff;
+}
 .header-content ul li{
     color: var(--text-coor);
     white-space: nowrap;
@@ -154,6 +167,36 @@ main .header{
 .header .header-image img{
     width: 100%;
     transform-origin: top right;
+}
+/*Banner section*/
+main section.banner{
+    display: flex;
+    padding: 4rem 7.5rem;
+}
+.banner .banner-img img{
+    width: 100%;
+}
+.banner .banner-content{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+    gap: 1rem;
+}
+.banner-content p{
+    line-height: 1.3rem;
+    width: 20rem;
+}
+.banner-content button{
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 2rem;
+}
+.banner span{
+    color: var(--text-color);
+}
+.banner span b{
+    display: block;
 }
 /* video-cards section*/
 section.video{
@@ -280,7 +323,24 @@ section.card .images .img-small{
     left: 0;
     transform: translate(-95px, 35px);
 }
-
+.card .images #card2-img{
+    transform: translate(230px, 35px);
+}
+main section.card-2 {
+    justify-content: space-between;
+}
+.card-2 .card-2-contents{
+    text-align: left;
+    width: 100%;
+    margin-left: 7.5rem;
+    align-items: flex-start;
+}
+.card-2-contents .sub-heading{
+    margin-bottom: 1rem;
+}
+.card-2 .card-2-contents .sub-heading span{
+    display: block;
+}
 /*career section*/
 
 section.career {
@@ -481,8 +541,19 @@ footer ul.sub-links, footer p{
         font-size: 0.9rem;
         width: 100%;
         padding: 0.6rem 1.8rem;
+    } 
+    /*banner section*/
+    main section.banner{
+        flex-direction: column;
+        padding: 2rem;
     }
-
+    .banner .banner-content{
+        align-items: center;
+        text-align: center;
+    }
+    .banner-content p{
+        width: 500px;
+    }
     /*video-card section responsive*/
     section.video {
         padding: 3rem;
@@ -515,6 +586,17 @@ footer ul.sub-links, footer p{
         margin-right: 3rem;
         left: 70px;
         position: relative
+    }
+    /*optional card section*/
+    .card-2 .images{
+        left: -20px;
+    }
+    .card-2 .card-2-contents{
+        order: 1;
+        margin: 0;
+    }
+    .card-2 .images{
+        order: 2;
     }
     /*career section*/
     section.career{
@@ -629,9 +711,21 @@ footer ul.sub-links, footer p{
         font-size: 0.9rem;
         padding: 0.6rem 1.8rem;
     } 
+    /*banner section*/
+    main section.banner{
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .banner .banner-content{
+        align-items: center;
+        text-align: center;
+    }
+    .banner p{
+        width: 350px;
+    }
     /*video-card section responsive*/
     main section.video{
-        padding: 0 2rem;
+        padding: 0;
     }
     .video .section-details .gradient-h3{
         display: block;
@@ -689,6 +783,25 @@ footer ul.sub-links, footer p{
         width: 8rem;
         height: 9rem;
         transform: translate(-20px, 50px);
+    }
+
+    /*optional card section*/
+    .card-2 .images img.img-large{
+        position: relative;
+        right: 0;
+    }
+    .card-2 .images #card2-img{
+        transform: translate(170px, 35px);
+    }
+    .card-2 .card-2-contents h3{
+        width: 300px;
+        text-align: center;
+    }
+    .card2 .card-2-contents .sub-heading{
+        border: 1 px solid red;
+    }
+    .card-2-contents span{
+        display: block;
     }
     /*career section*/
     .career {
