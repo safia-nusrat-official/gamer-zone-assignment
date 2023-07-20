@@ -9,7 +9,7 @@
 :root{
     --primary-color: #FF42A5;
     --dark-color: #0B0223;
-    --text-coor: #534C64;
+    --text-color: #534C64;
 
 }
 .sub-heading{
@@ -38,6 +38,17 @@
     color: var(--text-color);
     font-weight: 400;
     font-size: 1.2rem;
+}
+.paragraph-text{
+    font-weight: 400;
+    font-size: 0.7rem;
+    color: var(--text-color);
+}
+.gradient-h3{
+    font-weight: 700;
+    background: -webkit-linear-gradient(-90deg, #F948B2, #8758F1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 /* navigation bar styles*/
 nav {
@@ -144,6 +155,83 @@ main .header{
     width: 100%;
     transform-origin: top right;
 }
+/* video-cards section*/
+section.video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+.video .section-details{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    margin-bottom: 2.6rem;
+}
+.video  .video-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.video-container .video-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 11rem;
+}
+.video-container .video-cards:hover .image{
+    border: 3px solid var(--primary-color);
+    border-radius: 13px;
+}
+.video-container .video-cards:hover .image .hover-effect{
+    visibility: visible;
+}
+.video-container .video-cards .image > img{
+    width: 100%;
+    height: 100%;
+}
+.video-container .video-cards .image{
+    position: relative;
+    margin-bottom: 0.4rem;
+}
+.video-container .video-cards .hover-effect{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    transition: visible 0.3s ease-in-out;
+}
+.video-cards .image .hover-effect .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    border-radius: 8px;
+}
+.image .hover-effect span{
+    font-size: 0.6em;
+}
+.image .hover-effect img{
+    width: 1.5em;
+    height: 1.5em;
+    margin-bottom: 0.5rem;
+    z-index: 2;
+}
+.video-cards .image .hover-effect span{
+    z-index: 2;
+}
+
 /*card section*/
 main section.card{
     display: flex;
@@ -244,7 +332,7 @@ footer ul.sub-links, footer p{
         gap: 2rem;
     }
     main{
-        padding: 3rem;
+        padding: 2rem;
         padding-top: 0;
         background: #fff;
     }
@@ -255,6 +343,7 @@ footer ul.sub-links, footer p{
         justify-content: center;
         margin: 0;
         background-image: url(images/group-14.png);
+        min-width: fit-content;
     }
     main .header .header-image{
         order: 1;
@@ -263,16 +352,53 @@ footer ul.sub-links, footer p{
         padding-bottom: 9px;
     }
     .header .header-content{
-        margin: auto;
-        padding: 0;
+        margin: 0;
+        padding: 3rem;
         width: 100%;
+        height: 100%;
         order: 2;
-        transform-origin: center;
+        scale: 1;
+        text-align: center;
+        min-width: fit-content;
     }
     .header-content .header-title{
         width: 100%;
         padding: 0;
         font-size: 12em;
+    }
+    .header-content .main-heading{
+        font-size: 0.3em;
+    }
+    .header-content h3.sub-heading{
+        font-size: 1.7rem;
+        word-spacing: 3px;
+    }
+    .header-content span{
+        white-space: break-spaces;
+    }
+    .header-content ul{
+        font-size: 12px;
+        padding: 0 2rem;
+    }
+    .header-content ul li img{
+        width: 0.8rem;
+        margin-right: 0.3rem;
+    }
+    .header-content .buttons{
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .header-content .buttons button{
+        font-size: 0.9rem;
+        width: 100%;
+        padding: 0.6rem 1.8rem;
+    }
+
+    /*video-card section responsive*/
+    section.video .video-container{
+        flex-wrap: wrap;
+        padding: 0 3rem;
+        width: 100%;
     }
 
     /*card-section responsive*/
@@ -291,7 +417,10 @@ footer ul.sub-links, footer p{
         margin-top: 2rem;
         margin-bottom: 2rem;
         width: 400px;
-    }
+    }/* 
+    .card .images-container{
+        border: 2px solid rebeccapurple;
+    } */
     .card .images{
         align-self: flex-end;
         margin-right: 3rem;
@@ -299,6 +428,167 @@ footer ul.sub-links, footer p{
     /*footer section*/
     footer{
         align-items: center;
+    }
+    footer ul{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    footer ul.sub-links{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    ul.sub-links:nth-child(3){
+        text-align: right;
+    }
+    footer p{
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+/*extra small devices responsive styles*/
+@media screen and (max-width:426px){
+  nav, nav ul{
+        flex-direction: column;
+    }
+    nav{
+        background-color: #fff;
+        margin: auto;
+        padding: 3rem;
+        justify-content: center;
+    }
+    nav ul{
+        margin: 2rem 0;
+        scale: 1;
+        gap: 2rem;
+    }
+    main{
+        padding: 0;
+        padding-top: 0;
+        background: #fff;
+    }
+    main .header{
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        background-image: url(images/group-14.png);
+        min-width: fit-content;
+    }
+    main .header .header-image{
+        order: 1;
+        scale: 1;
+        background: #fff;
+        padding-bottom: 9px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .header .header-content{
+        margin: 0;
+        padding: 2rem;
+        width: 100%;
+        height: 100%;
+        order: 2;
+        scale: 1;
+        text-align: center;
+        min-width: fit-content;
+    }
+    .header-content .header-title{
+        width: 100%;
+        padding: 0;
+        font-size: 12em;
+    }
+    .header-content .main-heading{
+        font-size: 0.3em;
+    }
+    .header-content h3.sub-heading{
+        font-size: 1.7rem;
+        word-spacing: 3px;
+    }
+    .header-content span{
+        white-space: break-spaces;
+    }
+    .header-content ul{
+        font-size: 12px;
+        padding: 0 2rem;
+    }
+    .header-content ul li img{
+        width: 0.8rem;
+        margin-right: 0.3rem;
+    }
+    .header-content .buttons{
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .header-content .buttons button{
+        font-size: 0.9rem;
+        padding: 0.6rem 1.8rem;
+    } 
+    /*video-card section responsive*/
+    main section.video{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .video .section-details .gradient-h3{
+        display: block;
+    }
+    .video .section-details p{
+        width: 250px;
+    }
+    .video .video-container{
+        gap: 3rem;
+    }
+    .video .video-container .video-cards{
+        width: 100%;
+        gap: 1rem;
+        font-size: 2.4rem;
+    }
+    .video-cards .image .hover-effect{
+        font-size: 22px;
+    }
+    .video-container .video-cards:hover .image{
+        border-radius: 20px;
+        border: 5px solid var(--primary-color);
+    }
+    /*card-section responsive*/
+    main .card{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .card .card-content{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 3rem;
+    }
+    .card .card-content p{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    .card .images{
+        margin-right: 3rem;
+        position: relative;
+        right: 5rem;
+    } 
+    .card .images img.img-large{
+        width: 13rem;
+        height: 13rem;
+        position: relative;
+        right: -50px;
+    }
+    .card .images img.img-small{
+        aspect-ratio: 1/1;
+        width: 8rem;
+        height: 9rem;
+        transform: translate(-20px, 50px);
+/*         transform: translate(30px, 50px);
+ */    }
+    /*footer section*/
+
+    footer{
+        align-items: center;
+        width: 100%;
     }
     footer ul{
         display: grid;
