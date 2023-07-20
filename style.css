@@ -105,12 +105,12 @@ nav li.social-links a img{
 
 /* header section*/
 main{
-    padding: 0 7.5rem;
     background: linear-gradient(#eeeeee7a, #fff) ;
     width: 100%;
 }
 main .header{
     display: flex;
+    padding: 0 7.5rem;
     justify-content: space-between;
     align-items: center;
 }
@@ -159,6 +159,7 @@ main .header{
 section.video{
     display: flex;
     flex-direction: column;
+    padding: 0 7.5rem;
     align-items: center;
     margin-bottom: 4rem;
 }
@@ -241,6 +242,7 @@ main section.card{
     margin-top: 5.4rem;
     margin-bottom: 5.4rem;
     position: relative;
+    padding: 0 7.5rem;
 }
 .card .card-content{
     display: flex;
@@ -279,6 +281,94 @@ section.card .images .img-small{
     transform: translate(-95px, 35px);
 }
 
+/*career section*/
+
+section.career {
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+}
+.career .content{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 4rem 7.5rem;
+    padding-right: 0;
+}
+.career .content, .content p, .content h3{
+    color: #fff;
+}
+.career .content .career-links{
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    white-space: nowrap;
+    font-size: 0.7rem;
+    gap: 2rem;
+}
+.content .career-links ul{
+    display: flex;
+    gap: 0.6rem;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.content .career-links ul#job-addresses{    
+    align-items: flex-end;
+}
+.career .content button{
+    background-color: #fff;
+    white-space: nowrap;
+    color: var(--primary-color);
+    width: fit-content;
+    font-size: 0.6rem;
+    padding: 0.6rem 2rem;
+}
+.career .image-container{
+    width: 100%;
+}
+.career .image-container img{
+    width: 100%;
+    height: 100%;
+}
+
+/*sponsor section*/
+.sponsor-section{
+    background-color: #fdfdfd;
+    padding: 4rem;
+    font-size: 25px;
+}
+.sponsor-section ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sponsor-section ul li{
+    display: flex;
+    border-radius: 50px;
+    align-items: center;
+    padding: 0.3rem;
+    background-color: #fff;
+    transition: border 0.25s;
+    margin: 1rem 0.5rem;
+}
+.sponsor-section ul li:hover{
+    border: 2px solid var(--primary-color);
+}
+.sponsor-section ul li:hover a {
+    color: var(--primary-color);
+}
+.sponsor-section ul li a{
+    font-size: 0.5em;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: color 0.2s;
+}
+.sponsor-section ul li img{
+    width: 1.4em;
+}
 /*footer section*/
 footer{
     width: 100%;
@@ -332,7 +422,6 @@ footer ul.sub-links, footer p{
         gap: 2rem;
     }
     main{
-        padding: 2rem;
         padding-top: 0;
         background: #fff;
     }
@@ -395,9 +484,13 @@ footer ul.sub-links, footer p{
     }
 
     /*video-card section responsive*/
+    section.video {
+        padding: 3rem;
+    }
     section.video .video-container{
         flex-wrap: wrap;
-        padding: 0 3rem;
+        justify-content: space-around;
+        padding: 0;
         width: 100%;
     }
 
@@ -417,13 +510,26 @@ footer ul.sub-links, footer p{
         margin-top: 2rem;
         margin-bottom: 2rem;
         width: 400px;
-    }/* 
-    .card .images-container{
-        border: 2px solid rebeccapurple;
-    } */
+    }
     .card .images{
-        align-self: flex-end;
         margin-right: 3rem;
+        left: 70px;
+        position: relative
+    }
+    /*career section*/
+    section.career{
+        flex-direction: column;
+    }
+    .career .content{
+        padding: 2rem;
+    }
+    .career .image-container{
+        padding: 2rem;
+    }
+
+    /*sponsor section*/
+    section.sponsor-section{
+        padding: 2rem 0;
     }
     /*footer section*/
     footer{
@@ -525,8 +631,7 @@ footer ul.sub-links, footer p{
     } 
     /*video-card section responsive*/
     main section.video{
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding: 0 2rem;
     }
     .video .section-details .gradient-h3{
         display: block;
@@ -550,16 +655,17 @@ footer ul.sub-links, footer p{
         border: 5px solid var(--primary-color);
     }
     /*card-section responsive*/
-    main .card{
+    main section.card{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 2rem;
     }
     .card .card-content{
         text-align: center;
         justify-content: center;
         align-items: center;
-        padding: 0 3rem;
+        padding: 0;
     }
     .card .card-content p{
         margin-top: 2rem;
@@ -570,6 +676,7 @@ footer ul.sub-links, footer p{
         margin-right: 3rem;
         position: relative;
         right: 5rem;
+        left: 0;
     } 
     .card .images img.img-large{
         width: 13rem;
@@ -582,10 +689,19 @@ footer ul.sub-links, footer p{
         width: 8rem;
         height: 9rem;
         transform: translate(-20px, 50px);
-/*         transform: translate(30px, 50px);
- */    }
-    /*footer section*/
+    }
+    /*career section*/
+    .career {
+        flex-direction: column;
+    }
+    .career .content{
+        padding: 2rem;
+    }
+    .career .image-container{
+        padding: 2rem;
+    }
 
+    /*footer section*/
     footer{
         align-items: center;
         width: 100%;
